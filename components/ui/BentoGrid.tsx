@@ -3,7 +3,7 @@
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import { useEffect, useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
@@ -52,12 +52,17 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     navigator.clipboard.writeText("harizulaiman@gmail.com");
     setCopied(true);
-
-    const copiedTimeout = setTimeout(()=> {
-      setCopied(false);
-    }, 5000)
-    return () => clearTimeout(copiedTimeout); 
   };
+
+  useEffect(() => {
+    if(copied)
+    {
+      const copiedTimeout = setTimeout(()=> {
+        setCopied(false);
+      }, 4000)
+      return () => clearTimeout(copiedTimeout);
+    }
+  }, [copied])
 
   return (
     <div
@@ -148,14 +153,12 @@ export const BentoGridItem = ({
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0`}>
                 <Lottie
-                  options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
+                    loop={copied}
+                    play={copied}
+                    animationData={animationData}
+                    rendererSettings={{
                       preserveAspectRatio: "xMidYMid slice",
-                    },
-                  }}
+                    }}
                 />
               </div>
               <MagicButton
