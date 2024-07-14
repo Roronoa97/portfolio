@@ -50,12 +50,12 @@ export const navItems = [
   
     {
       id: 5,
-      title: "Currently building a JS Animation library",
+      title: "Currently developing a Management System for Tuition Center",
       description: "The Inside Scoop",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
-      img: process.env.BASE_PATH + "/b5.svg",
+      img: "",
       spareImg: process.env.BASE_PATH + "/grid.svg",
     },
     {
@@ -73,35 +73,19 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "3D Solar System Planets to Explore",
-      des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-      img: process.env.BASE_PATH + "/p1.svg",
-      iconLists: [process.env.BASE_PATH + "/re.svg", process.env.BASE_PATH + "/tail.svg", process.env.BASE_PATH + "/ts.svg", process.env.BASE_PATH + "/three.svg", process.env.BASE_PATH + "/fm.svg"],
-      link: process.env.BASE_PATH + "/ui.earth.com",
+      title: "SSIPR",
+      des: "A Selangor state initiative",
+      img: process.env.BASE_PATH + "/ssipr.png",
+      iconLists: [process.env.BASE_PATH + "/laravel.svg", process.env.BASE_PATH + "/bootstrap.svg", process.env.BASE_PATH + "/jquery.svg", process.env.BASE_PATH + "/postgresql.svg"],
+      link: "https://ssipr.selangor.gov.my/",
     },
     {
       id: 2,
-      title: "Yoom - Video Conferencing App",
-      des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-      img: process.env.BASE_PATH + "/p2.svg",
-      iconLists: [process.env.BASE_PATH + "/next.svg", process.env.BASE_PATH + "/tail.svg", process.env.BASE_PATH + "/ts.svg", process.env.BASE_PATH + "/stream.svg", process.env.BASE_PATH + "/c.svg"],
-      link: process.env.BASE_PATH + "/ui.yoom.com",
-    },
-    {
-      id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-      img: process.env.BASE_PATH + "/p3.svg",
-      iconLists: [process.env.BASE_PATH + "/re.svg", process.env.BASE_PATH + "/tail.svg", process.env.BASE_PATH + "/ts.svg", process.env.BASE_PATH + "/three.svg", process.env.BASE_PATH + "/c.svg"],
-      link: process.env.BASE_PATH + "/ui.aiimg.com",
-    },
-    {
-      id: 4,
-      title: "Animated Apple Iphone 3D Website",
-      des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-      img: process.env.BASE_PATH + "/p4.svg",
-      iconLists: [process.env.BASE_PATH + "/next.svg", process.env.BASE_PATH + "/tail.svg", process.env.BASE_PATH + "/ts.svg", process.env.BASE_PATH + "/three.svg", process.env.BASE_PATH + "/gsap.svg"],
-      link: process.env.BASE_PATH + "/ui.apple.com",
+      title: "SMARTDUN",
+      des: "A Selangor state initiative",
+      img: process.env.BASE_PATH + "/smartdun.png",
+      iconLists: [process.env.BASE_PATH + "/laravel.svg", process.env.BASE_PATH + "/bootstrap.svg", process.env.BASE_PATH + "/jquery.svg", process.env.BASE_PATH + "/postgresql.svg"],
+      link: "https://smartdun.smartselangor.com.my/",
     },
   ];
   
@@ -174,29 +158,29 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "Frontend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+      title: "Internship at KPM",
+      desc: "A 6 month internship programme where I experienced a real work life situation",
       className: "md:col-span-2",
       thumbnail: process.env.BASE_PATH + "/exp1.svg",
     },
     {
       id: 2,
-      title: "Mobile App Dev - JSM Tech",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+      title: "PSH at JAN",
+      desc: "Assist in redesigning the portal landing pages",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: process.env.BASE_PATH + "/exp2.svg",
     },
     {
       id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+      title: "MyStep Programme at KKM",
+      desc: "Developed e-credentialing, an online registration system exclusively for physicians to attain a certificate of expertise.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: process.env.BASE_PATH + "/exp3.svg",
     },
     {
       id: 4,
-      title: "Lead Frontend Developer",
-      desc: "Developed and maintained user-facing features using modern frontend technologies.",
+      title: "Web Developer at STT",
+      desc: "Involve in developing a system called SISM40 (Skim Internet Selangor M40), SSIPR and SMARTDUN",
       className: "md:col-span-2",
       thumbnail: process.env.BASE_PATH + "/exp4.svg",
     },
@@ -206,13 +190,11 @@ export const navItems = [
     {
       id: 1,
       img: process.env.BASE_PATH + "/git.svg",
+      url: 'https://github.com/Roronoa97/'
     },
     {
       id: 2,
-      img: process.env.BASE_PATH + "/twit.svg",
-    },
-    {
-      id: 3,
       img: process.env.BASE_PATH + "/link.svg",
+      url: 'https://my.linkedin.com/in/nur-harizul-aiman-mat-harith-6299b8200'
     },
   ];

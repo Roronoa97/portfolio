@@ -38,13 +38,15 @@ function Footer() {
         </p>
 
         <div className="flex items-center md:gap-3 md-6">
-          {socialMedia.map(({ id, img }) => (
-            <div
+          {socialMedia.map(({ id, img, url }) => (
+            <a
+              href={url}
               key={id}
+              target="_blank"
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-100 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
             >
               <img src={img} alt={img} width={20} height={20} />
-            </div>
+            </a>
           ))}
         </div>
       </div>
