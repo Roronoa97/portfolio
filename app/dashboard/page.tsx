@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/site-header"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 
 import data from "./data.json"
+export default async function DashboardPage() {
 
-export default function Page() {
   return (
     <SidebarProvider
       style={

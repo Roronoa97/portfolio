@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -14,11 +16,15 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { useActionState } from "react"
+import { signin } from "@/app/actions/auth"
 
-export function LoginForm({
+export function SigninForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
+  const [state, action, pending] = useActionState(signin, undefined);
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -29,7 +35,7 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={action}>
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
@@ -37,8 +43,9 @@ export function LoginForm({
                   id="email"
                   type="email"
                   placeholder="m@example.com"
-                  required
+                  name="email"
                 />
+                {state?.errors?.email && <p>{state.errors.email}</p>}
               </Field>
               <Field>
                 <div className="flex items-center">
@@ -50,13 +57,11 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" type="password" name="password"/>
+                {state?.errors?.password && <p>{state.errors.password}</p>}
               </Field>
               <Field>
                 <Button type="submit">Login</Button>
-                <Button variant="outline" type="button">
-                  Login with Google
-                </Button>
                 <FieldDescription className="text-center">
                   Don&apos;t have an account? <a href="#">Sign up</a>
                 </FieldDescription>
