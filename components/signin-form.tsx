@@ -1,5 +1,7 @@
 'use client'
 
+import { useActionState, useEffect } from "react"
+import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,11 +14,11 @@ import {
 import {
   Field,
   FieldDescription,
+  FieldError,
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { useActionState } from "react"
 import { signin } from "@/app/actions/auth"
 
 export function SigninForm({
@@ -25,6 +27,13 @@ export function SigninForm({
 }: React.ComponentProps<"div">) {
 
   const [state, action, pending] = useActionState(signin, undefined);
+
+  useEffect(() => {
+    if (state?.message) {
+      toast.error(state.message)
+    }
+  }, [state?.message])
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -44,8 +53,9 @@ export function SigninForm({
                   type="email"
                   placeholder="m@example.com"
                   name="email"
+                  defaultValue={state?.values?.email ?? ""}
                 />
-                {state?.errors?.email && <p>{state.errors.email}</p>}
+                {state?.errors?.email && <FieldError>{state.errors.email}</FieldError>}
               </Field>
               <Field>
                 <div className="flex items-center">
@@ -58,10 +68,12 @@ export function SigninForm({
                   </a>
                 </div>
                 <Input id="password" type="password" name="password"/>
-                {state?.errors?.password && <p>{state.errors.password}</p>}
+                {state?.errors?.password && <FieldError>{state.errors.password}</FieldError>}
               </Field>
               <Field>
-                <Button type="submit">Login</Button>
+                <Button type="submit" disabled={pending}>
+                  {pending ? "Logging in..." : "Login"}
+                </Button>
                 <FieldDescription className="text-center">
                   Don&apos;t have an account? <a href="#">Sign up</a>
                 </FieldDescription>
