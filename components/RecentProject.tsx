@@ -12,7 +12,7 @@ function RecentProject() {
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <div
-            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
+            className="sm:h-164 h-128 lg:min-h-130 flex items-center justify-center sm:w-[570px] w-[80vw]"
             key={id}
           >
             <PinContainer title={link} href={link}>
@@ -34,7 +34,7 @@ function RecentProject() {
                   {iconLists.map((icon, index) => (
                     <div
                       key={icon}
-                      className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border border-white/20 rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{ transform: `translateX(-${10 * index}px)` }}
                     >
                       <img src={icon} alt={icon} className="p-2" />

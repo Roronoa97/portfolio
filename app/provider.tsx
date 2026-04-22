@@ -1,9 +1,23 @@
 "use client"
 
 import * as React from "react"
-import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { type ThemeProviderProps } from "next-themes/dist/types"
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+type ThemeProviderProps = {
+  children: React.ReactNode
+}
+
+export function ThemeProvider({ children }: ThemeProviderProps) {
+  React.useEffect(() => {
+    const root = document.documentElement
+
+    root.classList.add("dark")
+    root.style.colorScheme = "dark"
+
+    return () => {
+      root.classList.remove("dark")
+      root.style.removeProperty("color-scheme")
+    }
+  }, [])
+
+  return <>{children}</>
 }
