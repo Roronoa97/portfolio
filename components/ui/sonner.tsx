@@ -6,6 +6,7 @@ import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon
 const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
+      position="top-center"
       theme="dark"
       className="toaster group"
       icons={{
