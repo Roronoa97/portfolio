@@ -2,7 +2,7 @@
 
 import { FormState, SignInFormSchema } from "@/app/lib/definitions";
 import { authenticate } from "@/app/lib/auth";
-import { createSession } from "../lib/session";
+import { createSession, deleteSession } from "../lib/session";
 import { redirect } from "next/navigation";
 
 export async function signin(state: FormState, formData: FormData) {
@@ -28,4 +28,9 @@ export async function signin(state: FormState, formData: FormData) {
     await createSession(authenticatedUser.id)
 
     redirect("/dashboard");
+}
+
+export async function logout() {
+    await deleteSession()
+    redirect("/login")
 }
