@@ -53,7 +53,6 @@ export function SigninForm({
                   type="email"
                   placeholder="m@example.com"
                   name="email"
-                  defaultValue={state?.values?.email ?? ""}
                 />
                 {state?.errors?.email && <FieldError>{state.errors.email}</FieldError>}
               </Field>
